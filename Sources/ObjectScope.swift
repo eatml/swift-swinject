@@ -11,7 +11,7 @@ public protocol ObjectScopeProtocol: AnyObject {
 }
 
 /// Basic implementation of ``ObjectScopeProtocol``.
-public class ObjectScope: ObjectScopeProtocol, CustomStringConvertible {
+public class ObjectScope: ObjectScopeProtocol, @unchecked Sendable, CustomStringConvertible {
     public private(set) var description: String
     private var storageFactory: () -> InstanceStorage
     private let parent: ObjectScopeProtocol?
